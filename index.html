@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn 3D Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">3D<span>Vault</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#models">Modellen</a>
+        <a href="#about">Over mij</a>
+    </nav>
+
+    <button class="cart-button" onclick="openCart()">
+        🛒 Winkelwagen <span id="cart-count">0</span>
+    </button>
+</header>
+
+
+<section id="home" class="hero">
+    <div>
+        <p class="small-title">DIGITALE 3D MODELLEN</p>
+
+        <h1>Modellen die je<br><span>direct kunt gebruiken.</span></h1>
+
+        <p class="hero-text">
+            Bekijk mijn collectie 3D-modellen voor games,
+            renders, projecten en meer.
+        </p>
+
+        <a href="#models" class="hero-button">Bekijk modellen</a>
+    </div>
+</section>
+
+
+<section id="models" class="products-section">
+
+    <div class="section-title">
+        <p class="small-title">MIJN COLLECTIE</p>
+        <h2>3D Modellen</h2>
+    </div>
+
+    <div class="products">
+
+        <!-- MODEL 1 -->
+        <div class="product">
+            <div class="product-image">
+                <img src="images/model1.jpg" alt="3D Model 1">
+            </div>
+
+            <div class="product-info">
+                <h3>Futuristic Car</h3>
+                <p>High quality 3D model</p>
+
+                <div class="product-bottom">
+                    <strong>€9,99</strong>
+                    <button onclick="addToCart('Futuristic Car', 9.99)">
+                        Toevoegen
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- MODEL 2 -->
+        <div class="product">
+            <div class="product-image">
+                <img src="images/model2.jpg" alt="3D Model 2">
+            </div>
+
+            <div class="product-info">
+                <h3>Sci-Fi Robot</h3>
+                <p>Game-ready 3D model</p>
+
+                <div class="product-bottom">
+                    <strong>€14,99</strong>
+                    <button onclick="addToCart('Sci-Fi Robot', 14.99)">
+                        Toevoegen
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- MODEL 3 -->
+        <div class="product">
+            <div class="product-image">
+                <img src="images/model3.jpg" alt="3D Model 3">
+            </div>
+
+            <div class="product-info">
+                <h3>Modern House</h3>
+                <p>Interior & exterior model</p>
+
+                <div class="product-bottom">
+                    <strong>€7,99</strong>
+                    <button onclick="addToCart('Modern House', 7.99)">
+                        Toevoegen
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="about" class="about">
+    <p class="small-title">OVER MIJ</p>
+
+    <h2>Mijn 3D Werk</h2>
+
+    <p>
+        Welkom in mijn 3D shop! Hier verkoop ik mijn eigen
+        3D-modellen die ik met veel aandacht maak.
+    </p>
+</section>
+
+
+<!-- WINKELWAGEN -->
+
+<div id="cart" class="cart">
+    <div class="cart-header">
+        <h2>Winkelwagen</h2>
+        <button onclick="closeCart()">✕</button>
+    </div>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-total">
+        Totaal: €<span id="cart-total">0.00</span>
+    </div>
+
+    <button class="checkout-button" onclick="checkout()">
+        Afrekenen
+    </button>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
