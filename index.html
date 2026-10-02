@@ -1,150 +1,172 @@
+```html
 <!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mijn 3D Shop</title>
+
+    <title>3D Space | 3D Filament & 3D Modellen</title>
+
+    <meta name="description" content="Ontdek 3D filament, 3D modellen en 3D-printproducten bij 3D Space. Simpel, snel en betaalbaar.">
+
+    <meta name="keywords" content="3D filament, PLA filament, 3D modellen, 3D print, 3D printing, filament kopen">
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <div class="logo">3D<span>Vault</span></div>
+    <header class="navbar">
+        <a href="/" class="logo">3D SPACE</a>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#models">Modellen</a>
-        <a href="#about">Over mij</a>
-    </nav>
-
-    <button class="cart-button" onclick="openCart()">
-        🛒 Winkelwagen <span id="cart-count">0</span>
-    </button>
-</header>
+        <nav>
+            <a href="#producten">Producten</a>
+            <a href="#over">Over</a>
+            <button onclick="openCart()" class="cart-button">
+                Winkelwagen <span id="cart-count">0</span>
+            </button>
+        </nav>
+    </header>
 
 
-<section id="home" class="hero">
-    <div>
-        <p class="small-title">DIGITALE 3D MODELLEN</p>
+    <main>
 
-        <h1>Modellen die je<br><span>direct kunt gebruiken.</span></h1>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">3D PRINTING</p>
 
-        <p class="hero-text">
-            Bekijk mijn collectie 3D-modellen voor games,
-            renders, projecten en meer.
-        </p>
+                <h1>Alles voor<br>jouw 3D print.</h1>
 
-        <a href="#models" class="hero-button">Bekijk modellen</a>
-    </div>
-</section>
+                <p class="hero-text">
+                    3D filament, modellen en accessoires.
+                    Simpel. Strak. Zonder gedoe.
+                </p>
+
+                <a href="#producten" class="button">
+                    Bekijk producten
+                </a>
+            </div>
+        </section>
 
 
-<section id="models" class="products-section">
+        <section id="producten" class="products-section">
 
-    <div class="section-title">
-        <p class="small-title">MIJN COLLECTIE</p>
-        <h2>3D Modellen</h2>
-    </div>
-
-    <div class="products">
-
-        <!-- MODEL 1 -->
-        <div class="product">
-            <div class="product-image">
-                <img src="images/model1.jpg" alt="3D Model 1">
+            <div class="section-header">
+                <p class="eyebrow">SHOP</p>
+                <h2>Producten</h2>
             </div>
 
-            <div class="product-info">
-                <h3>Futuristic Car</h3>
-                <p>High quality 3D model</p>
+            <div class="products">
 
-                <div class="product-bottom">
-                    <strong>€9,99</strong>
-                    <button onclick="addToCart('Futuristic Car', 9.99)">
-                        Toevoegen
-                    </button>
-                </div>
+                <article class="product">
+                    <div class="product-image">
+                        <span>PLA</span>
+                    </div>
+
+                    <div class="product-info">
+                        <h3>PLA Filament</h3>
+                        <p>Hoogwaardig PLA filament voor betrouwbare 3D prints.</p>
+
+                        <div class="product-bottom">
+                            <strong>€19,99</strong>
+                            <button onclick="addToCart('PLA Filament', 19.99)">
+                                Toevoegen
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="product">
+                    <div class="product-image">
+                        <span>3D</span>
+                    </div>
+
+                    <div class="product-info">
+                        <h3>3D Model Pack</h3>
+                        <p>Een collectie digitale 3D modellen voor jouw printer.</p>
+
+                        <div class="product-bottom">
+                            <strong>€9,99</strong>
+                            <button onclick="addToCart('3D Model Pack', 9.99)">
+                                Toevoegen
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="product">
+                    <div class="product-image">
+                        <span>PRO</span>
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Premium Filament</h3>
+                        <p>Premium filament voor gedetailleerde en sterke prints.</p>
+
+                        <div class="product-bottom">
+                            <strong>€24,99</strong>
+                            <button onclick="addToCart('Premium Filament', 24.99)">
+                                Toevoegen
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
             </div>
+
+        </section>
+
+
+        <section id="over" class="about">
+
+            <p class="eyebrow">3D SPACE</p>
+
+            <h2>Gemaakt voor<br>3D makers.</h2>
+
+            <p>
+                Alles wat je nodig hebt om betere 3D prints te maken.
+                Van filament tot digitale 3D modellen.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <div id="cart" class="cart">
+
+        <div class="cart-header">
+            <h2>Winkelwagen</h2>
+            <button onclick="closeCart()">×</button>
         </div>
 
+        <div id="cart-items"></div>
 
-        <!-- MODEL 2 -->
-        <div class="product">
-            <div class="product-image">
-                <img src="images/model2.jpg" alt="3D Model 2">
-            </div>
+        <div class="cart-footer">
+            <strong>Totaal: €<span id="cart-total">0.00</span></strong>
 
-            <div class="product-info">
-                <h3>Sci-Fi Robot</h3>
-                <p>Game-ready 3D model</p>
-
-                <div class="product-bottom">
-                    <strong>€14,99</strong>
-                    <button onclick="addToCart('Sci-Fi Robot', 14.99)">
-                        Toevoegen
-                    </button>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- MODEL 3 -->
-        <div class="product">
-            <div class="product-image">
-                <img src="images/model3.jpg" alt="3D Model 3">
-            </div>
-
-            <div class="product-info">
-                <h3>Modern House</h3>
-                <p>Interior & exterior model</p>
-
-                <div class="product-bottom">
-                    <strong>€7,99</strong>
-                    <button onclick="addToCart('Modern House', 7.99)">
-                        Toevoegen
-                    </button>
-                </div>
-            </div>
+            <button onclick="checkout()" class="checkout">
+                Afrekenen
+            </button>
         </div>
 
     </div>
-</section>
 
 
-<section id="about" class="about">
-    <p class="small-title">OVER MIJ</p>
-
-    <h2>Mijn 3D Werk</h2>
-
-    <p>
-        Welkom in mijn 3D shop! Hier verkoop ik mijn eigen
-        3D-modellen die ik met veel aandacht maak.
-    </p>
-</section>
+    <div id="cart-overlay" onclick="closeCart()"></div>
 
 
-<!-- WINKELWAGEN -->
-
-<div id="cart" class="cart">
-    <div class="cart-header">
-        <h2>Winkelwagen</h2>
-        <button onclick="closeCart()">✕</button>
-    </div>
-
-    <div id="cart-items"></div>
-
-    <div class="cart-total">
-        Totaal: €<span id="cart-total">0.00</span>
-    </div>
-
-    <button class="checkout-button" onclick="checkout()">
-        Afrekenen
-    </button>
-</div>
+    <footer>
+        <p>© 2026 3D Space</p>
+    </footer>
 
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
+```
