@@ -1,279 +1,493 @@
-```html
 <!DOCTYPE html>
+
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>3D Space — 3D Geprinte Producten & Custom Prints</title>
+  <title>3D Space — Premium 3D Geprinte Producten</title>
 
-    <meta name="description" content="3D Space maakt 3D geprinte producten en print jouw eigen 3D-bestand. Ontdek praktische 3D prints of stuur je eigen ontwerp op.">
+<meta
+name="description"
+content="Ontdek praktische 3D-geprinte producten en laat jouw eigen 3D-ontwerp professioneel printen door 3D Space."
 
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" href="style.css">
+>
+
+  <meta name="theme-color" content="#090909">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-    <header class="navbar">
-        <a href="#" class="logo">3D SPACE</a>
-
-        <nav>
-            <a href="#shop">Shop</a>
-            <a href="#custom">Jouw ontwerp</a>
-            <button class="cart-button" onclick="openCart()">
-                Mandje <span id="cart-count">0</span>
-            </button>
-        </nav>
-    </header>
-
-
-    <main>
-
-        <!-- HERO -->
-        <section class="hero">
-
-            <div class="hero-image">
-                <img src="images/hero.jpg" alt="3D geprint product">
-            </div>
-
-            <div class="hero-content">
-                <p class="eyebrow">3D SPACE</p>
-
-                <h1>Van idee<br>naar print.</h1>
-
-                <p>
-                    Praktische 3D-geprinte producten.
-                    Of stuur je eigen 3D-bestand op.
-                    Wij printen het voor je.
-                </p>
-
-                <a href="#shop" class="button">
-                    Bekijk prints
-                </a>
-            </div>
-
-        </section>
-
-
-        <!-- SHOP -->
-        <section id="shop" class="shop">
-
-            <div class="section-heading">
-                <p class="eyebrow">SHOP</p>
-                <h2>Gemaakt om<br>te gebruiken.</h2>
-            </div>
-
-
-            <div class="products">
-
-                <!-- PRODUCT 1 -->
-                <article class="product">
-
-                    <div class="product-image">
-                        <img src="images/tv-mount.jpg" alt="3D geprinte TV accessoire">
-                    </div>
-
-                    <div class="product-info">
-                        <p class="product-number">01</p>
-
-                        <h3>TV Accessoire</h3>
-
-                        <p>
-                            Handige 3D-geprinte oplossing voor
-                            het netjes plaatsen van accessoires bij je TV.
-                        </p>
-
-                        <div class="product-bottom">
-                            <strong>€14,99</strong>
-
-                            <button onclick="addToCart('TV Accessoire', 14.99)">
-                                Toevoegen
-                            </button>
-                        </div>
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 2 -->
-                <article class="product">
-
-                    <div class="product-image">
-                        <img src="images/cable-organizer.jpg" alt="3D geprinte kabel organizer">
-                    </div>
-
-                    <div class="product-info">
-                        <p class="product-number">02</p>
-
-                        <h3>Cable Organizer</h3>
-
-                        <p>
-                            Houd je kabels netjes, georganiseerd
-                            en uit de weg.
-                        </p>
-
-                        <div class="product-bottom">
-                            <strong>€7,99</strong>
-
-                            <button onclick="addToCart('Cable Organizer', 7.99)">
-                                Toevoegen
-                            </button>
-                        </div>
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 3 -->
-                <article class="product">
-
-                    <div class="product-image">
-                        <img src="images/phone-stand.jpg" alt="3D geprinte telefoonhouder">
-                    </div>
-
-                    <div class="product-info">
-                        <p class="product-number">03</p>
-
-                        <h3>Phone Stand</h3>
-
-                        <p>
-                            Minimalistische telefoonhouder
-                            voor je bureau.
-                        </p>
-
-                        <div class="product-bottom">
-                            <strong>€9,99</strong>
-
-                            <button onclick="addToCart('Phone Stand', 9.99)">
-                                Toevoegen
-                            </button>
-                        </div>
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- CUSTOM PRINT -->
-        <section id="custom" class="custom">
-
-            <div class="custom-image">
-                <img src="images/custom-print.jpg" alt="Op maat gemaakte 3D print">
-            </div>
-
-            <div class="custom-content">
-
-                <p class="eyebrow">CUSTOM PRINT</p>
-
-                <h2>Jouw bestand.<br>Onze printer.</h2>
-
-                <p>
-                    Heb je zelf een 3D-model?
-                    Stuur je bestand naar ons en wij
-                    maken er een echte 3D-print van.
-                </p>
-
-                <div class="custom-steps">
-
-                    <div>
-                        <span>01</span>
-                        <p>Upload je bestand</p>
-                    </div>
-
-                    <div>
-                        <span>02</span>
-                        <p>Wij bekijken je ontwerp</p>
-                    </div>
-
-                    <div>
-                        <span>03</span>
-                        <p>Wij printen het</p>
-                    </div>
-
-                    <div>
-                        <span>04</span>
-                        <p>Je ontvangt je print</p>
-                    </div>
-
-                </div>
-
-                <a href="mailto:info@3d-san.com" class="button">
-                    Stuur je ontwerp
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- SIMPLE INFO -->
-        <section class="statement">
-
-            <p>
-                3D prints voor dagelijks gebruik.
-                <br>
-                Ontworpen. Geprint. Verzonden.
-            </p>
-
-        </section>
-
-    </main>
-
-
-    <!-- CART -->
-    <div id="cart-overlay" onclick="closeCart()"></div>
-
-    <aside id="cart" class="cart">
-
-        <div class="cart-header">
-            <h2>Mandje</h2>
-
-            <button onclick="closeCart()">×</button>
+  <!-- HEADER -->
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+```
+  <a href="#" class="logo">
+    <span class="logo-mark"></span>
+    3D SPACE
+  </a>
+
+  <nav class="main-nav">
+    <a href="#shop">Shop</a>
+    <a href="#custom">Custom print</a>
+    <a href="#about">Over ons</a>
+  </nav>
+
+  <button class="cart-button" onclick="openCart()">
+    <span>Mandje</span>
+    <span class="cart-number" id="cart-count">0</span>
+  </button>
+
+</div>
+```
+
+  </header>
+
+  <main>
+
+```
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        <span></span>
+        3D printed design
+      </div>
+
+      <h1>
+        Van idee.
+        <br>
+        Naar <em>object.</em>
+      </h1>
+
+      <p class="hero-text">
+        Praktische 3D-geprinte producten, ontworpen om
+        je dagelijks leven slimmer en eenvoudiger te maken.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#shop" class="button button-light">
+          Bekijk producten
+          <span>↗</span>
+        </a>
+
+        <a href="#custom" class="text-link">
+          Laat iets printen
+          <span>↓</span>
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <div>
+          <strong>01</strong>
+          <span>Ontworpen<br>voor dagelijks gebruik</span>
         </div>
 
-        <div id="cart-items"></div>
+        <div>
+          <strong>02</strong>
+          <span>Geprint<br>op aanvraag</span>
+        </div>
 
-        <div class="cart-footer">
+        <div>
+          <strong>03</strong>
+          <span>Persoonlijk<br>en lokaal</span>
+        </div>
+      </div>
 
-            <div class="cart-total">
-                <span>Totaal</span>
-                <strong>€<span id="cart-total">0.00</span></strong>
+    </div>
+
+    <div class="hero-visual">
+
+      <div class="hero-image-wrap">
+        <img
+          src="images/hero.jpg"
+          alt="3D geprint product van 3D Space"
+        >
+
+        <div class="hero-image-label">
+          <span>3D SPACE</span>
+          <span>EST. 2026</span>
+        </div>
+      </div>
+
+      <div class="floating-card">
+        <span class="floating-dot"></span>
+        <div>
+          <strong>Made to fit.</strong>
+          <small>Designed & printed with care.</small>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SHOP INTRO -->
+<section class="shop-intro" id="shop">
+  <div class="container">
+
+    <div class="section-top">
+      <div>
+        <span class="section-number">01 / SHOP</span>
+        <h2>Objecten die<br><em>werken.</em></h2>
+      </div>
+
+      <p>
+        Geen onnodige producten. Alleen slimme objecten
+        die een probleem oplossen en er goed uitzien.
+      </p>
+    </div>
+
+
+    <!-- PRODUCTS -->
+    <div class="products-grid">
+
+      <!-- PRODUCT 1 -->
+      <article class="product-card product-large">
+
+        <div class="product-image">
+          <img
+            src="images/tv-mount.jpg"
+            alt="TV accessoire"
+          >
+
+          <span class="product-tag">01</span>
+
+          <button
+            class="quick-add"
+            onclick="addToCart('TV Accessoire', 14.99)"
+          >
+            +
+          </button>
+        </div>
+
+        <div class="product-info">
+          <div>
+            <h3>TV Accessoire</h3>
+            <p>Praktische bevestiging voor je setup.</p>
+          </div>
+
+          <strong>€14,99</strong>
+        </div>
+
+      </article>
+
+
+      <!-- PRODUCT 2 -->
+      <article class="product-card product-offset">
+
+        <div class="product-image">
+          <img
+            src="images/cable-organizer.jpg"
+            alt="Cable organizer"
+          >
+
+          <span class="product-tag">02</span>
+
+          <button
+            class="quick-add"
+            onclick="addToCart('Cable Organizer', 7.99)"
+          >
+            +
+          </button>
+        </div>
+
+        <div class="product-info">
+          <div>
+            <h3>Cable Organizer</h3>
+            <p>Houd je kabels netjes en georganiseerd.</p>
+          </div>
+
+          <strong>€7,99</strong>
+        </div>
+
+      </article>
+
+
+      <!-- PRODUCT 3 -->
+      <article class="product-card">
+
+        <div class="product-image">
+          <img
+            src="images/phone-stand.jpg"
+            alt="3D geprinte telefoonstandaard"
+          >
+
+          <span class="product-tag">03</span>
+
+          <button
+            class="quick-add"
+            onclick="addToCart('Phone Stand', 9.99)"
+          >
+            +
+          </button>
+        </div>
+
+        <div class="product-info">
+          <div>
+            <h3>Phone Stand</h3>
+            <p>Minimalistische standaard voor je telefoon.</p>
+          </div>
+
+          <strong>€9,99</strong>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CUSTOM PRINT -->
+<section class="custom-section" id="custom">
+  <div class="container">
+
+    <div class="custom-grid">
+
+      <div class="custom-image">
+        <img
+          src="images/custom-print.jpg"
+          alt="Een custom 3D print"
+        >
+
+        <div class="custom-image-number">
+          02
+        </div>
+      </div>
+
+
+      <div class="custom-content">
+
+        <span class="section-number">02 / CUSTOM PRINT</span>
+
+        <h2>
+          Jij bedenkt het.
+          <br>
+          <em>Wij printen het.</em>
+        </h2>
+
+        <p class="custom-intro">
+          Heb je zelf een 3D-model? Stuur je bestand naar ons
+          en wij maken er een echte print van.
+        </p>
+
+
+        <div class="process">
+
+          <div class="process-item">
+            <span>01</span>
+            <div>
+              <h3>Stuur je bestand</h3>
+              <p>Upload of mail je STL, 3MF of ander geschikt bestand.</p>
             </div>
+          </div>
 
-            <button class="checkout" onclick="checkout()">
-                Afrekenen
-            </button>
+          <div class="process-item">
+            <span>02</span>
+            <div>
+              <h3>Wij bekijken het</h3>
+              <p>We controleren of het model geschikt is om te printen.</p>
+            </div>
+          </div>
+
+          <div class="process-item">
+            <span>03</span>
+            <div>
+              <h3>Wij printen</h3>
+              <p>Je ontwerp wordt zorgvuldig 3D-geprint.</p>
+            </div>
+          </div>
+
+          <div class="process-item">
+            <span>04</span>
+            <div>
+              <h3>Jouw object</h3>
+              <p>Je ontvangt je eigen ontwerp als echte fysieke print.</p>
+            </div>
+          </div>
 
         </div>
 
-    </aside>
+
+        <a href="mailto:info@3d-san.com" class="button button-outline">
+          Stuur je ontwerp
+          <span>↗</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 
-    <!-- FOOTER -->
-    <footer>
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
 
-        <div class="footer-logo">
-            3D SPACE
-        </div>
+    <div class="about-grid">
+
+      <div>
+        <span class="section-number">03 / 3D SPACE</span>
+      </div>
+
+      <div class="about-copy">
+        <h2>
+          Slimme ideeën.
+          <br>
+          <em>Fysiek gemaakt.</em>
+        </h2>
 
         <p>
-            3D geprinte producten & custom prints.
+          3D Space maakt praktische producten die technologie
+          en design combineren. Van kleine organizers tot
+          volledig custom ontwerpen.
         </p>
 
         <p>
-            © 2026 3D Space
+          Elk object wordt met aandacht geprint en gecontroleerd
+          voordat het wordt verzonden.
         </p>
+      </div>
 
-    </footer>
+    </div>
+
+  </div>
+</section>
 
 
-    <script src="script.js"></script>
+<!-- CTA -->
+<section class="final-cta">
+  <div class="container">
+
+    <div class="cta-inner">
+
+      <span class="section-number">READY?</span>
+
+      <h2>
+        Heb je een idee?
+        <br>
+        <em>Maak het echt.</em>
+      </h2>
+
+      <a href="#custom" class="button button-light">
+        Start een custom print
+        <span>↗</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+```
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+    <div class="container">
+
+```
+  <div class="footer-top">
+
+    <a href="#" class="logo footer-logo">
+      <span class="logo-mark"></span>
+      3D SPACE
+    </a>
+
+    <p>
+      Practical objects.<br>
+      Printed locally.
+    </p>
+
+    <a href="mailto:info@3d-san.com" class="footer-email">
+      info@3d-san.com
+    </a>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 3D Space</span>
+
+    <div>
+      <a href="#shop">Shop</a>
+      <a href="#custom">Custom print</a>
+      <a href="#about">Over ons</a>
+    </div>
+
+    <span>Made with 3D</span>
+  </div>
+
+</div>
+```
+
+  </footer>
+
+  <!-- CART OVERLAY -->
+
+  <div id="cart-overlay" class="cart-overlay" onclick="closeCart()"></div>
+
+  <!-- CART -->
+
+  <aside id="cart" class="cart">
+
+```
+<div class="cart-header">
+  <div>
+    <span class="section-number">YOUR CART</span>
+    <h2>Mandje</h2>
+  </div>
+
+  <button onclick="closeCart()" class="cart-close">
+    ×
+  </button>
+</div>
+
+<div id="cart-items" class="cart-items">
+  <p class="cart-empty">Je mandje is nog leeg.</p>
+</div>
+
+<div class="cart-footer">
+
+  <div class="cart-total">
+    <span>Totaal</span>
+    <strong id="cart-total">€0,00</strong>
+  </div>
+
+  <button onclick="checkout()" class="button button-light cart-checkout">
+    Bestellen
+    <span>↗</span>
+  </button>
+
+</div>
+```
+
+  </aside>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
-```
